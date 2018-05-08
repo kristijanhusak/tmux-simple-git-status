@@ -1,6 +1,6 @@
 # Tmux simple git status
 
-Prints current pane git branch and uncommited changes (if avaialble).
+Prints current pane git branch and uncommitted changes (if available).
 
 ![screenshot](https://i.imgur.com/yLXoTtK.png)
 
@@ -39,3 +39,12 @@ Reload TMUX environment:
 
     $ tmux source-file ~/.tmux.conf
 
+## FAQ
+
+*Q: Status is not updating in real time.*
+
+A: Frequency of update depends on tmux `status-interval` option. To refresh the status every 5 seconds, add `set -g status-interval 5` to your `.tmux.conf`
+
+*Q: There is a space before and after the status.*
+
+A: Those are added in order to allow easier styling and highlighting (like on screenshot). If you would add an empty space by yourself, you would get empty blocks in your statusline that doesn't hold anything. If you really want it to be removed, please file an issue.
