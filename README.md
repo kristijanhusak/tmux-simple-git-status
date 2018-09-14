@@ -2,7 +2,7 @@
 
 Prints current pane git branch and uncommitted changes (if available).
 
-![screenshot](https://i.imgur.com/yLXoTtK.png)
+![screenshot](https://i.imgur.com/SzOftNt.png)
 
 ## Installation
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
