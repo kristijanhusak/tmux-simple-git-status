@@ -33,7 +33,7 @@ git_status() {
   local changes=$(git_changes)
 
   if [[ -n $status ]]; then
-    printf " $status $changes"
+    printf "🌵$status $changes"
   fi
 }
 
