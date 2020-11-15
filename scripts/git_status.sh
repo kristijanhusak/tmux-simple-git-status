@@ -6,8 +6,12 @@ cd $PANE_PATH
 git_changes() {
   local changes=$(git diff --shortstat | sed 's/^[^0-9]*\([0-9]*\)[^0-9]*\([0-9]*\)[^0-9]*\([0-9]*\)[^0-9]*/\1;\2;\3/')
   local changes_array=(${changes//;/ })
+  local untracked=$(git status --porcelain 2>/dev/null| grep -c "^??")
   local result=()
-
+  
+  if [[ $untracked != 0 ]]; then
+    result+=("?$untracked")
+  fi
   if [[ -n ${changes_array[0]} ]]; then
     result+=("~${changes_array[0]}")
   fi
